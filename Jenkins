@@ -9,12 +9,18 @@ pipeline{
             environment{
                 name2 = "Mike"
                 name3 = "Jamie"
+                username = credentials('just_username_password')
+                secret = credentials('just_secret_text')
             }
             steps {
                 echo "name1 ${name1}"
                 echo "name2 ${name2}"
                 echo "name3 ${name3}"
                 sh "printenv"
+                echo "Username ${username}"
+                echo "Username ${username_USR}"
+                echo "Username ${username_PSW}"
+                echo "Secret ${secret}"
             }
         }
     }
